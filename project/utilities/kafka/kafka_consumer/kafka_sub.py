@@ -10,6 +10,7 @@ class MyKafkaConsumer:
 
     def open(self):
         try:
+
             self.consumer = KafkaConsumer(*self.topics, **self.configs)
         except Exception as e:
             print(type(e).__name__, "-", e)
@@ -22,5 +23,7 @@ class MyKafkaConsumer:
 
 
     def consume(self):
+
         for msg in self.consumer:
+
             yield msg

@@ -1,14 +1,11 @@
 from pathlib import Path
 import datetime
 import json
-# from project.utilities.kafka.kafka_producer.kafka_pub import kafkaProducer
 
 
-class Processing:
+class Processing1:
     @staticmethod
     def read_meta_data(path_file):
-
-
         try:
             file_path = Path(path_file)
             stats = file_path.stat()

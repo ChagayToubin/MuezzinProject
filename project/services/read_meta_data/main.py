@@ -3,7 +3,8 @@ from project.config.settings import Settings
 from project.services.read_meta_data.manager import Manager
 def main():
 
-    kaf_config=Settings.configs_for_kafka_client
+    kaf_config=Settings.configs_for_kafka_pro
+
     path_file=r"C:\Users\User\PycharmProjects\MuezzinProject07_09\project\data_files\podcasts\download (1).wav"
 
 

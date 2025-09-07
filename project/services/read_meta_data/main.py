@@ -1,13 +1,16 @@
+
 from project.config.settings import Settings
 from project.services.read_meta_data.manager import Manager
 def main():
 
-    KAFKA_URI=Settings.KAFKA_URI
-    path_file=r"C:\Users\User\PycharmProjects\MuezzinProject07_09\project\data_files\podcasts\download (4).wav"
-    manager=Manager(KAFKA_URI,path_file)
-    manager.app()
+    kaf_config=Settings.configs_for_kafka_client
+    path_file=r"C:\Users\User\PycharmProjects\MuezzinProject07_09\project\data_files\podcasts\download (1).wav"
 
+
+    manager=Manager(kaf_config,path_file)
+    manager.app()
 
 if __name__ == '__main__':
     main()
-    print("--")
+
+    print("finsih service 1")

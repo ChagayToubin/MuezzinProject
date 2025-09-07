@@ -1,6 +1,6 @@
 from kafka import KafkaProducer
 
-class MyKafkaProducer:
+class Producer:
 
     def __init__(self, configs):
         self.configs = configs
@@ -10,6 +10,9 @@ class MyKafkaProducer:
     def open(self):
         try:
             self.producer = KafkaProducer(**self.configs)
+            # print(self.producer)
+            # self.producer.send("ds",{"ds":"----"})
+            # print("open secess")
         except Exception as e:
             raise RuntimeError("Failed to connect to Kapka.") from e
 
@@ -19,8 +22,9 @@ class MyKafkaProducer:
             self.producer.close()
 
 
-    def send_to_kapka(self, topic_name, data):
+    def send_to_kafka(self, topic_name, data):
         try:
             self.producer.send(topic_name, data)
+
         except Exception as e:
             raise RuntimeError("Failed to send to Kapka") from e

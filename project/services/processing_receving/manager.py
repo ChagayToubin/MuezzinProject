@@ -3,11 +3,19 @@ from copyreg import dispatch_table
 from project.services.processing_receving.processing_receving_process import Process2
 from project.utilities.kafka.kafka_consumer.kafka_sub import MyKafkaConsumer
 from project.utilities.elastic.elastic_connection import Elastic
+from project.utilities.mongo.mongo_connection import Mongo
 class Manager:
-    def __init__(self,topic,kafka_config,uri_es):
+    def __init__(self,topic,kafka_config,uri_es,):
         self.kafka=MyKafkaConsumer(topic,kafka_config)
 
         self.elastic=Elastic(uri_es)
+
+        self.mongo=Mongo()
+        print(self.mongo)
+        self.mongo.connect()
+        self.mongo.create("mama",{"a""asssa"})
+
+
 
         self.processing=Process2()
 

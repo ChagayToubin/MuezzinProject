@@ -50,7 +50,6 @@ class Mongo:
 
     def send_audio(self,data_dict,uniq_id):
         fs = gridfs.GridFS(self.db)
-        print(data_dict["name"])
         path_folder = r"C:\Users\User\PycharmProjects\MuezzinProject07_09\project\data_files\podcasts"
 
         audio_file_path = f"{path_folder}/{data_dict["name"]}"

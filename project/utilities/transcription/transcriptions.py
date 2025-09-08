@@ -10,4 +10,4 @@ class Transcriptions:
         with sr.AudioFile(file_path) as source:
             audio_data = r.record(source)
             text = r.recognize_google(audio_data)
-            print(text)
+            return text

@@ -1,50 +1,16 @@
 import json
 from elasticsearch.helpers import scan, bulk
 from elasticsearch import helpers
+import time
 
 class Process2:
     @staticmethod
-    def get_data_from_kafka(kafka):
+    def get_data_from_kafka_and_send_elastic_and_mongo(kafka,es):
+
         for i in kafka.consume():
             data_dict = json.loads(i.value)
-            print(data_dict)
-    @staticmethod
-    def send_to_elastic(es):
-        mapping = es.init_mapping("xz")
-        # if not self.es.indices.exists(index=self.index):
-        #     self.es.indices.create(index=self.index, body=mapping)
-        actions = []
-        for i, doc in enumerate("s"):
-            document = {
-                "text": doc["text"],
-                "TweetID": str(doc["TweetID"]),
-                "CreateDate": str(doc["CreateDate"]),
-                "Antisemitic": doc["Antisemitic"]
+            uniq_id=str(data_dict["size"])+data_dict["name"]
+            es.send_data(data_dict,uniq_id)
 
-            }
 
-            actions.append({
-                "_index": es.index,
-                "_id": i,
-                "_source": document
-            })
-
-        helpers.bulk(es.es, actions)
-        print(f"Indexed {len(actions)} documents.")
-
-        pass
-    def init_mapping(self, index_name):
-        self.index = index_name
-        mapping = {
-            "mappings": {
-                "properties": {
-                    "text": {"type": "text"},
-                    "TweetID": {"type": "keyword"},
-                    "CreateDate": {"type": "text"},
-                    "Antisemitic": {"type": "integer"},
-                    "sentiment": {"type": "keyword"},
-                    "weapons": {"type": "keyword"}
-                }
-            }
-        }
-        return mapping
+# {'name': 'download (3).wav', 'size': 2076090, 'Suffix': '.wav', 'last_modified': '2025-09-07 10:39:18.403126', 'creation_time': '2025-09-07 11:06:01.330065'}

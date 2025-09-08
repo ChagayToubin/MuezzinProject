@@ -7,7 +7,7 @@ def main():
 
     path_file=r"C:\Users\User\PycharmProjects\MuezzinProject07_09\project\data_files\podcasts"
 
-    print(type(path_file))
+
     manager=Manager(kaf_config,path_file)
     manager.app()
 

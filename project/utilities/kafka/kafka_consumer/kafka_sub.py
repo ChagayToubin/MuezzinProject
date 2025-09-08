@@ -23,7 +23,5 @@ class MyKafkaConsumer:
 
 
     def consume(self):
-
         for msg in self.consumer:
-
             yield msg

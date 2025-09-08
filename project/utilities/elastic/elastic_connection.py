@@ -1,7 +1,7 @@
 
 from elasticsearch import Elasticsearch
-from elasticsearch.helpers import  bulk
-from elasticsearch import helpers
+# from elasticsearch.helpers import  bulk
+# from elasticsearch import helpers
 
 class Elastic:
     def __init__(self, uri):
@@ -30,26 +30,21 @@ class Elastic:
 
     @staticmethod
     def init_mapping():
-
         mapping = {
             "mappings": {
                 "properties": {
-                    "text": {"type": "text"},
-                    "TweetID": {"type": "keyword"},
-                    "CreateDate": {"type": "text"},
-                    "Antisemitic": {"type": "integer"},
-                    "sentiment": {"type": "keyword"},
-                    "weapons": {"type": "keyword"}
+                    "name": {"type": "text"},
+                    "size": {"type": "text"},
+                    "Suffix": {"type": "text"},
+                    "last_modified": {"type": "text"},
+                    "creation_time": {"type": "text"},
+                    "text": {"type": "text"}
                 }
             }
         }
         return mapping
+
     def send_data(self,doc,uniq_id):
-
-
-
-
-
         w=self.es.index(index=self.index, id=uniq_id, body=doc)
         print(w)
         print("the data send")

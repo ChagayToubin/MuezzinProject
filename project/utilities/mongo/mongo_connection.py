@@ -30,7 +30,7 @@ class Mongo:
         uri = self.get_uri()
         self.client = MongoClient(uri)
         self.db = self.client[self.db_name]
-        print(f"Connected to MongoDB at {uri}")
+        print(f"connected ")
 
     def close(self):
 

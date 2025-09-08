@@ -1,16 +1,21 @@
 import json
+from project.utilities.transcription.transcriptions import Transcriptions
+
 
 class Process2:
+    _folder_path=r"C:\Users\User\PycharmProjects\MuezzinProject07_09\project\data_files\podcasts"
     @staticmethod
-    def get_data_from_kafka_and_send_elastic_and_mongo(kafka,es,mongo):
-
+    def get_data_from_kafka_and_send_elastic_and_mongo(kafka, es, mongo,folder_path):
         for i in kafka.consume():
             data_dict = json.loads(i.value)
-            uniq_id=str(data_dict["size"])+data_dict["name"]
 
-            es.send_data(data_dict,uniq_id)
-            mongo.send_audio(data_dict,uniq_id)
+            text=Transcriptions.voice_to_text(folder_path, data_dict["name"])
+            # data_dict["text"]=text
+
+            uniq_id = str(data_dict["size"]) + data_dict["name"]
+
+            es.send_data(data_dict, uniq_id)
+
+            mongo.send_audio(data_dict, uniq_id)
 
 
-
-# {'name': 'download (3).wav', 'size': 2076090, 'Suffix': '.wav', 'last_modified': '2025-09-07 10:39:18.403126', 'creation_time': '2025-09-07 11:06:01.330065'}

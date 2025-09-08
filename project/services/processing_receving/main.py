@@ -7,7 +7,6 @@ def main():
 
     uri_es=Settings.uri_es
 
-
     manager=Manager(["MetaData"],kaf_config , uri_es )
 
 

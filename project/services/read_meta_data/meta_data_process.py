@@ -19,8 +19,8 @@ class Processing1:
             dic_info={"name":file_name,
                   "size":size,
                   "Suffix":ending,
-                  "Last modified":str(last_modified),
-                  "Creation time":str(creation_time)
+                  "last_modified":str(last_modified),
+                  "creation_time":str(creation_time)
                   }
             return json.dumps(dic_info)
             # return dic_info

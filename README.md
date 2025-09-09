@@ -22,10 +22,13 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
 - ## script--
      - **commend.bat**- All the necessary container installations 
 
-- ## Services
+- ## Services--
    -  **read_meta_data** – Pulls the data and extracts all the data on it and sends it in a container.
    -  **Receiving_processing_data** – Pulls data from Springboard, performs various processes and then updates to both Mongo and Elastic
-
+ 
+ - ## utillities--  
+     - **elastic** -Used for easy and convenient data storage as well as crazy search capabilities
+  -**kafka**-Used for data traffic, sending by topic and distributing in an orderly and easy manner
 
 
 

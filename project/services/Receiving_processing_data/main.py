@@ -1,5 +1,6 @@
 from project.config.settings import Settings
 from project.services.Receiving_processing_data.manager import Manager
+from project.utilities.logger.logger_info import Logger
 
 
 def main():

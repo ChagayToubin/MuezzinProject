@@ -28,7 +28,7 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
  
  - ## utillities--  
      - **elastic** -Used for easy and convenient data storage as well as crazy search capabilities
-  -**kafka**-Used for data traffic, sending by topic and distributing in an orderly and easy manner
+     - **kafka** -Used for data traffic, sending by topic and distributing in an orderly and easy manner
 
 
 

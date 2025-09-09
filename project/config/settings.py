@@ -2,7 +2,7 @@ import os
 import json
 
 class Settings:
-
+    # --------------------------------kafka----------------------------------
     kafka_host = os.getenv("KAFKA_HOST", "localhost")
     kafka_port = os.getenv("KAFKA_PORT", 9092)
 
@@ -12,13 +12,29 @@ class Settings:
 
     }
     configs_for_kafka_con={
-        'bootstrap_servers': f"localhost:9092",
+        'bootstrap_servers': f"{kafka_host}:{kafka_port}",
         'group_id': "my-consumer",
         'auto_offset_reset': "earliest",
         'enable_auto_commit': 'True',
         'value_deserializer': lambda v: json.loads(v.decode("utf-8"))
     }
+
+    # -------------------------------elastic--------------------
     uri_es = os.getenv("URI", "http://localhost:9200")
+
+    # ------------------------------mongo------------------------
+    mongo_host = os.getenv("MONGO_HOST", "localhost")
+    mongo_port=int(os.getenv("MONGO_PORT", 27017))
+    mongo_db_name=os.getenv("MONGO_DB", "test_db")
+    mongo_usr= os.getenv("MONGO_USER",None)
+    mongo_password=os.getenv("MONGO_PASS",None)
+
+    mongo_setting=[mongo_host,mongo_port,mongo_db_name,mongo_usr,mongo_password]
+
+
+
+
+
 
 
 

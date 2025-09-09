@@ -7,26 +7,26 @@ from datetime import datetime
 
 
 class Mongo:
-    def __init__(self):
+    def __init__(self,mongo_setting):
 
-        self.host = os.getenv("MONGO_HOST", "localhost")
-        self.port = int(os.getenv("MONGO_PORT", 27017))
-        self.db_name = os.getenv("MONGO_DB", "test_db")
-        self.user = os.getenv("MONGO_USER",None)
-        self.password = os.getenv("MONGO_PASS",None)
+        self.host = mongo_setting[0]
+        self.port = mongo_setting[1]
+        self.db_name = mongo_setting[2]
+        self.user = mongo_setting[3]
+        self.password = mongo_setting[4]
 
         self.client = None
         self.db = None
 
     def get_uri(self):
-        """יוצר URI מתוך משתני הסביבה"""
-        # if self.user and self.password:
-        #     return f"mongodb://{self.user}:{self.password}@{self.host}:{self.port}/{self.db_name}"
-        return "mongodb://localhost:27017/"
+        if self.user and self.password:
+            return f"mongodb+srv://{self.user}:{self.password}@{self.host}/{self.db_name}"
+        else:
+            return f"mongodb://{self.host}:27017/"
 
 
     def connect(self):
-        """פותח חיבור למסד"""
+
         uri = self.get_uri()
         self.client = MongoClient(uri)
         self.db = self.client[self.db_name]

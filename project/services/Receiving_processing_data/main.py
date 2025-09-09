@@ -1,14 +1,14 @@
 from project.config.settings import Settings
-from project.services.processing_receving.manager import Manager
+from project.services.Receiving_processing_data.manager import Manager
 
 
 def main():
     kaf_config = Settings.configs_for_kafka_con
 
     uri_es = Settings.uri_es
+    mongo_setting=Settings.mongo_setting
 
-    manager = Manager(["MetaData"], kaf_config, uri_es)
-
+    manager = Manager(["MetaData"], kaf_config, uri_es,mongo_setting)
     manager.app()
 
 if __name__ == '__main__':

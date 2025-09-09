@@ -24,10 +24,9 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
 
 ## Services
 - **read_meta_data** – Pulls the data and extracts all the data on it and sends it in a container.
-- **Preprocessor** – cleans the text (remove symbols, lowercase, stop words, etc.) and publishes it back.  
-- **Enricher** – adds more features like sentiment, weapons detection, and dates.  
-- **Persister** – saves everything into the local MongoDB (two collections: antisemitic and not antisemitic).  
-- **DataRetrieval** – simple API to return the data.
+- **Receiving_processing_data** – Pulls data from Springboard, performs various processes and then updates to both Mongo and Elastic
+
+
 
 
 

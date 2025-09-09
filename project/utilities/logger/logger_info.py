@@ -34,6 +34,3 @@ class Logger:
             return logger
 
 
-l = Logger.get_logger()
-l.error("12345")
-ls = Logger.get_logger()

@@ -25,11 +25,12 @@ class Manager:
 
     def app(self):
         # Runs the service logic
+
         try:
             self.process_meta_data.send_kafka(
                 self.path_folder, self.kafka, self.topic)
 
             logger.info("Reading the metadata and sending it to Kefka was successful.")
         except Exception as e:
-            logger.error(f"Reading the metadata and sending it to Kefka failed because:{e}{e}")
+            logger.error(f"Reading the metadata and sending it to Kefka failed because:{e}")
 

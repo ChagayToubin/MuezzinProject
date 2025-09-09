@@ -18,11 +18,12 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
   
 - ## data_file--
 -   **podcasts**- All audio files
-- 
   
+- ## script--
+- **commend.bat**- All the necessary container installations 
 
 ## Services
-- **config** – fetches data from MongoDB Atlas and sends it to Kafka.  
+- **read_meta_data** – Pulls the data and extracts all the data on it and sends it in a container.
 - **Preprocessor** – cleans the text (remove symbols, lowercase, stop words, etc.) and publishes it back.  
 - **Enricher** – adds more features like sentiment, weapons detection, and dates.  
 - **Persister** – saves everything into the local MongoDB (two collections: antisemitic and not antisemitic).  

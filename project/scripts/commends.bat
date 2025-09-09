@@ -3,7 +3,7 @@
 docker run -d -p 9092:9092 --name kafka apache/kafka:latest
 
 --------elastic---------------
-docker run -d --name es -p 9200:9200 `
+docker run -d --name es -p 9200:9200
 -e "discovery.type=single-node" `
 -e "xpack.security.enabled=false" `
 -e "ES_JAVA_OPTS=-Xms1g -Xmx1g" `

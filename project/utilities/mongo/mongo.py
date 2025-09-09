@@ -26,7 +26,6 @@ class Mongo:
 
 
     def connect(self):
-
         uri = self.get_uri()
         self.client = MongoClient(uri)
         self.db = self.client[self.db_name]

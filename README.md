@@ -10,10 +10,10 @@ The four part Take the transcription of the file and add it to the data in a nea
 
 For a good and beautiful search in a visually pleasing way, you can use the console at this link http://127.0.0.1:5601/app/dev_tools#/console
 
-#project--
+# project--
 
   confid:System Settings (Environment Variables)
-# Foobar
+
 
 Foobar is a Python library for dealing with word pluralization.
 

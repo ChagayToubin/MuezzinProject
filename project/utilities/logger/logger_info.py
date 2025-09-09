@@ -4,6 +4,7 @@ from elasticsearch import Elasticsearch
 from datetime import datetime
 
 
+
 class Logger:
     _logger = None
 

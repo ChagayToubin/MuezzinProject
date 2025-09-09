@@ -1,7 +1,9 @@
 
 from project.config.settings import Settings
 from project.services.read_meta_data.manager import Manager
+from project.utilities.logger.logger_info import Logger
 def main():
+
 
     kaf_config=Settings.configs_for_kafka_pro
 

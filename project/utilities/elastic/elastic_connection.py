@@ -6,7 +6,7 @@ from elasticsearch import Elasticsearch
 class Elastic:
     def __init__(self, uri):
         self.uri = uri
-        self.index="muezzin"
+        self.index="muezzin_data_project"
         self.es = self.connection()
 
 

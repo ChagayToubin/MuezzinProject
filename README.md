@@ -14,7 +14,7 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
 
 ## project--
 - ## config--
--  **setting** - :System Settings (Environment Variables)
+-  **setting** - System Settings (Environment Variables)
 -  
 - 
 ## Services

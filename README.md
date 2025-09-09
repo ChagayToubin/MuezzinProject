@@ -1,4 +1,4 @@
-##### General description:
+### General description:
 
 The first part takes a folder of files and extracts the information they contain.
 

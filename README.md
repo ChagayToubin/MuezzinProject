@@ -13,8 +13,9 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
 # Folder structure
 
 ## project--
-- ## config
--  setting :System Settings (Environment Variables)
+- ## config--
+-  **setting** - :System Settings (Environment Variables)
+-  
 - 
 ## Services
 - **config** – fetches data from MongoDB Atlas and sends it to Kafka.  

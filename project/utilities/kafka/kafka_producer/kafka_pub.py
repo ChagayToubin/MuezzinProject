@@ -10,9 +10,6 @@ class Producer:
     def open(self):
         try:
             self.producer = KafkaProducer(**self.configs)
-            # print(self.producer)
-            # self.producer.send("ds",{"ds":"----"})
-            # print("open secess")
         except Exception as e:
             raise RuntimeError("Failed to connect to Kapka.") from e
 

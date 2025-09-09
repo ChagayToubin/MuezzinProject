@@ -14,9 +14,13 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
 
 ## project--
 - ## config--
--  **setting** - System Settings (Environment Variables)
--  
+-  **Setting** - System Settings (Environment Variables)
+  
+- ## data_file--
+-   **podcasts**- All audio files
 - 
+  
+
 ## Services
 - **config** – fetches data from MongoDB Atlas and sends it to Kafka.  
 - **Preprocessor** – cleans the text (remove symbols, lowercase, stop words, etc.) and publishes it back.  

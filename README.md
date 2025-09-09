@@ -29,8 +29,9 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
       
    -  **update** -Calculates the amount of danger from the text and updates the appropriate fields 
                   Percentage of dangerous words , Determination of criminality ,And degree of risk
-      
-      -             !!(Because the scope of the words that are being used is negligible and low, I saw the origin of the things and therefore I set a threshold of risk and                           criminalization that is relatively low.)
+                      
+
+        **explain**(The average percentage of words is 0.30939176841270893, so that would be the threshold for determining criminality or danger level.)
     
                  
                   

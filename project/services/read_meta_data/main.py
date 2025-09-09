@@ -2,7 +2,7 @@ from pathlib import Path
 
 from project.config.settings import Settings
 from project.services.read_meta_data.manager import Manager
-
+from project.utilities.logger.logger_info import Logger
 base_dir = Path(__file__).resolve().parent
 
 

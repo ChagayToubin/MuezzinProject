@@ -20,7 +20,11 @@ class Settings:
     }
 
     # -------------------------------elastic--------------------
-    uri_es = os.getenv("URI", "http://localhost:9200")
+    # uri_es = os.getenv("URI", "http://localhost:9200")
+    es_port=os.getenv("URI_PORT", None)
+    es_host=os.getenv("URI_HOST", None)
+    uri_es=[es_port,es_host]
+
 
     # ------------------------------mongo------------------------
     mongo_host = os.getenv("MONGO_HOST", "localhost")

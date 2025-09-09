@@ -5,16 +5,23 @@ from elasticsearch import Elasticsearch
 
 class Elastic:
     def __init__(self, uri):
-        self.uri = uri
+
+        self.host=uri[1]
+        self.port=uri[0]
+        self.uri = self.get_uri()
+
         self.index="muezzin_data_project"
         self.es = self.connection()
 
+    def get_uri(self):
+        if self.host and self.port:
+            return f"http://{self.host}:{self.port}"
+        else:
+            return "http://localhost:9200"
 
-    def get_URI(self):
-        return self.uri
 
     def connection(self):
-        return Elasticsearch(self.get_URI())
+        return Elasticsearch(self.uri)
 
     def close(self):
         if self.es:
@@ -49,8 +56,4 @@ class Elastic:
         print(w)
         print("the data send")
 
-    # def get_uri(self,usr=None):
-    #     if usr:
-    #         return f"http://{usr}:9200"
-    #     else:
-    #         return "http://localhost:9200"
+

@@ -1,5 +1,5 @@
 import speech_recognition as sr
-
+#
 class Transcriptions:
     @staticmethod
     def voice_to_text(folder_path, file_name):

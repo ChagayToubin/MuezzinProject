@@ -32,6 +32,7 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
                  explain( average percentage of words is 0.30939176841270893, so that would be the threshold for determining criminality or danger level.)
       
       -**end_point** -fast api server that shows me data by risk level
+      http://127.0.0.1:8000/high_risk
                       
 
         

@@ -14,7 +14,7 @@ http://127.0.0.1:5601/app/dev_tools#/console
 
 
 # To run the app
--
+
 - First, enable metadata reading -(read_meta_data-service)
 - Second, enable data reception and sending.-(Receiving_processing_data-service)
 - Third, enable data updating. -(update-service)

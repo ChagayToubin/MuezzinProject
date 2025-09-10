@@ -1,7 +1,7 @@
 from project.config.settings import Settings
 from project.services.Receiving_processing_data.manager import Manager
 from project.utilities.logger.logger_info import Logger
-
+logger =Logger.get_logger()
 
 def main():
     # Takes environment variables for the service
@@ -17,4 +17,4 @@ def main():
 if __name__ == '__main__':
     main()
 
-    print("finsih service 2")
+    logger.info("servic Receiving_processing_data  end ")

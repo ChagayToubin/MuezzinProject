@@ -1,8 +1,8 @@
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 from elasticsearch import helpers
-
-
+from project.utilities.logger.logger_info import Logger
+logger=Logger.get_logger()
 class Elastic:
     def __init__(self, uri):
 
@@ -33,9 +33,14 @@ class Elastic:
             self.es.indices.create(index=self.index, body=mapping)
 
     def send_data(self, doc, uniq_id):
-        w = self.es.index(index=self.index, id=uniq_id, body=doc)
-        print(w)
-        print("the data send")
+        try:
+            print(uniq_id)
+            w = self.es.index(index=self.index, id=uniq_id, body=doc)
+            print(w)
+        except Exception as e:
+            logger.error(f"the send faild becuas{e}")
+
+
 
     def update_all_documents_sentiment(self):
         count_all = 0

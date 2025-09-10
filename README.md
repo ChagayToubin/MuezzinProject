@@ -38,6 +38,9 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
                    
  - ## utillities--  
      - **elastic** -Used for easy and convenient data storage as well as crazy search capabilities
+         (url to kibana visualization:
+        http://127.0.0.1:5601/app/lens?_g=%28filters%3A%21%28%28%27%24state%27%3A%28store%3AappState%29%2Cmeta%3A%28alias%3Amap%2Cdisabled%3A%21f%2Cfield%3Abds_threat_level%2Cindex%3A%278ef70a76-d3b1-44c0-ae62-199951f7dba4%27%2Ckey%3Abds_threat_level%2Cnegate%3A%21f%2Ctype%3Aexists%2Cvalue%3Aexists%29%2Cquery%3A%28exists%3A%28field%3Abds_threat_level%29%29%29%29%2Ctime%3A%28from%3Anow-15m%2Cto%3Anow%29%29#/?_g=(filters:!(),refreshInterval:(pause:!t,value:60000),time:(from:now-15m,to:now)))
+       
      - **kafka** -Used for data traffic, sending by topic and distributing in an orderly and easy manner
      - 
 

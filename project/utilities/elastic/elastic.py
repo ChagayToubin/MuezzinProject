@@ -45,6 +45,7 @@ class Elastic:
 
     def update_all_documents_sentiment(self):
         count_all=0
+        average=0.30939176841270893
 
         scroll = self.es.search(
             index=self.index,
@@ -68,8 +69,16 @@ class Elastic:
                                        Elastic.count_words(text,['Freedom Flotilla', 'Resistance', 'Liberation', 'Free Palestine', 'Gaza', 'Ceasefire', 'Protest', 'UNRWA']))
 
 
+
                 if count_number_of_words==0:
-                    count_number_of_words+=0.00000001
+                    percent=0
+                else:
+                    percent=(count_number_of_words/len(text))*100
+
+                is_bds=percent >average
+                bds_threat_level=Elastic.bds_threat_level_calculation(percent,average)
+
+
 
                 count_all += ((count_number_of_words / len(text))*100)
 
@@ -78,7 +87,7 @@ class Elastic:
                     "_op_type": "update",
                     "_index": self.index,
                     "_id": doc_id,
-                    "doc": {"bds_precent": (count_number_of_words/len(text))*100}
+                    "doc": {"bds_precent":percent,"is_bds": is_bds,"bds_threat_level":bds_threat_level }
 
                 })
 
@@ -90,8 +99,8 @@ class Elastic:
             scroll = self.es.scroll(scroll_id=scroll_id, scroll="2m")
             scroll_id = scroll["_scroll_id"]
             hits = scroll["hits"]["hits"]
+            # print(count_all/34)
 
-        # print("!@#$%^&*&^%", count_all/34)
 
 
     @staticmethod
@@ -102,6 +111,15 @@ class Elastic:
                 count+=1
 
         return count
+    @staticmethod
+    def bds_threat_level_calculation(percent, average):
+
+        if percent>average:
+            return "high"
+        elif percent<=0:
+            return "none"
+        else:
+            return "medium"
 
     @staticmethod
     def init_mapping():

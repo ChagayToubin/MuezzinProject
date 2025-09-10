@@ -105,6 +105,10 @@ http://127.0.0.1:5601/app/dev_tools#/console
 
 
 
+The latest version I downloaded the Dockers because they fell on me so in the final_version_d brunch they are also there
+
+
+
 
 
 

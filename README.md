@@ -93,14 +93,14 @@ http://127.0.0.1:5601/app/dev_tools#/console
     - │   ├───update_data
 
 - ├───utilities
-    │   ├───decryption
-    │   ├───elastic
-    │   ├───kafka
-    │   │   ├───kafka_consumer
-    │   │   ├───kafka_producer
-    │   ├───logger
-    │   ├───mongo
-    │   ├───transcription
+   - │   ├───decryption
+   - │   ├───elastic
+   - │   ├───kafka
+   - │   │   ├───kafka_consumer
+   - │   │   ├───kafka_producer
+   - │   ├───logger
+   - │   ├───mongo
+   - │   ├───transcription
 
 
 

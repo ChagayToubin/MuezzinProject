@@ -1,5 +1,5 @@
 # JetBrains IDEs (PyCharm, IntelliJ, etc.)
-../.idea/
+../../../.idea/
 *.iml
 
 # Python bytecode

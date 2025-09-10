@@ -1,6 +1,9 @@
 import uvicorn
 from project.utilities.logger.logger_info import Logger
-logger=Logger.get_logger()
+
+logger = Logger.get_logger()
+
+
 def main():
     try:
 
@@ -13,12 +16,6 @@ def main():
         logger.error(f"The server crashed because{e}")
 
 
-
-
-
-
-
 if __name__ == '__main__':
+    logger.info("start fastapi server")
     main()
-
-    print("end_pont start")

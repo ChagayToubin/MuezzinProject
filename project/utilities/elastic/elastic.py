@@ -1,6 +1,8 @@
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 from project.utilities.logger.logger_info import Logger
+from project.utilities.decryption.decryptions import Decryption
+from project.config.settings import Settings
 
 logger = Logger.get_logger()
 
@@ -23,8 +25,9 @@ class Elastic:
 
     def connection(self):
         try:
-            return Elasticsearch(self.uri)
             logger.info("The connection to the Elastic server was successful.")
+
+            return Elasticsearch(self.uri)
         except Exception as e:
             logger.error(f"The connection to the elastic server has crashed because{e}")
 
@@ -40,7 +43,6 @@ class Elastic:
 
     def send_data(self, doc, uniq_id):
         try:
-            print(uniq_id)
             w = self.es.index(index=self.index, id=uniq_id, body=doc)
             logger.info("Sending data to Elastic was successful.")
         except Exception as e:
@@ -65,6 +67,10 @@ class Elastic:
         return hits
 
     def update_all_documents_sentiment(self):
+        bad_word = Decryption.Decryption_msg(Settings.msg_bad)
+
+        word = Decryption.Decryption_msg(Settings.msg)
+
         count_all = 0
         average = 0.30939176841270893
 
@@ -86,13 +92,8 @@ class Elastic:
             for hit in hits:
                 doc_id = hit["_id"]
                 text = hit["_source"].get("text", "")
-                count_number_of_words = (Elastic.count_words(text, ['Genocide', 'War Crimes', 'Apartheid', 'Massacre',
-                                                                    'Nakba', 'Displacement', 'Humanitarian Crisis',
-                                                                    'Blockade', 'Occupation', 'Refugees', 'ICC',
-                                                                    'BDS']) * 2 +
-                                         Elastic.count_words(text, ['Freedom Flotilla', 'Resistance', 'Liberation',
-                                                                    'Free Palestine', 'Gaza', 'Ceasefire', 'Protest',
-                                                                    'UNRWA']))
+                count_number_of_words = (Elastic.count_words(text, bad_word) * 2 +
+                                         Elastic.count_words(text, word))
 
                 if count_number_of_words == 0:
                     percent = 0

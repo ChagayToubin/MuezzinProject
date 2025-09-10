@@ -2,7 +2,9 @@ import logging
 from elasticsearch import Elasticsearch
 from datetime import datetime
 
-
+# A logger class built from a singleton that is designed to
+# provide data response in the event of success or
+# failure of the system and updates Elastic with a unique tracking index.
 class Logger:
     _logger = None
 
@@ -32,5 +34,3 @@ class Logger:
             logger.addHandler(logging.StreamHandler())
             cls._logger = logger
             return logger
-
-

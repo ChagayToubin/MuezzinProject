@@ -1,11 +1,12 @@
 import speech_recognition as sr
+
+
 class Transcriptions:
     # The function receives a path to a folder and a file name and transcribes it.
 
     @staticmethod
     def voice_to_text(folder_path, file_name):
-
-        file_path=rf"{folder_path}\{file_name}"
+        file_path = rf"{folder_path}\{file_name}"
         print(file_path)
         r = sr.Recognizer()
         with sr.AudioFile(file_path) as source:

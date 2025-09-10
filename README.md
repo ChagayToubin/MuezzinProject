@@ -50,7 +50,28 @@ http://127.0.0.1:5601/app/dev_tools#/console
       
       http://127.0.0.1:8000/medium_risk
 
-      http://127.0.0.1:8000/none_risk  
+      http://127.0.0.1:8000/none_risk
+- ├───data_files
+   - │   └───podcasts
+  
+- ├───services
+   - │   ├───end_point
+    - │   │   
+    - │   ├───read_meta_data
+    - │   │   
+    - │   ├───Receiving_processing_data
+    - │   
+    - │   ├───update_data
+
+- ├───utilities
+   - │   ├───decryption
+   - │   ├───elastic
+   - │   ├───kafka
+   - │   │   ├───kafka_consumer
+   - │   │   ├───kafka_producer
+   - │   ├───logger
+   - │   ├───mongo
+   - │   ├───transcription
 
 
                       

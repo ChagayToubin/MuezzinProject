@@ -80,8 +80,9 @@ http://127.0.0.1:5601/app/dev_tools#/console
    ## Folder structure
   
 
-├───data_files
-│   └───podcasts
+- ├───data_files
+  │   └───podcasts
+  
 ├───scripts
 ├───services
 │   ├───end_point
@@ -91,15 +92,16 @@ http://127.0.0.1:5601/app/dev_tools#/console
 │   ├───Receiving_processing_data
 │   
 │   ├───update_data
-├───utilities
-│   ├───decryption
-│   ├───elastic
-│   ├───kafka
-│   │   ├───kafka_consumer
-│   │   ├───kafka_producer
-│   ├───logger
-│   ├───mongo
-│   ├───transcription
+
+- ├───utilities
+  │   ├───decryption
+  │   ├───elastic
+  │   ├───kafka
+  │   │   ├───kafka_consumer
+  │   │   ├───kafka_producer
+  │   ├───logger
+  │   ├───mongo
+  │   ├───transcription
 
 
 

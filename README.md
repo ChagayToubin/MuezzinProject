@@ -10,7 +10,9 @@ The four part Take the transcription of the file and add it to the data in a nea
 
 For a good and beautiful search in a visually pleasing way, you can use the console at this link 
 http://127.0.0.1:5601/app/dev_tools#/console
+
 http://127.0.0.1:8000/medium_risk
+
 http://127.0.0.1:8000/none_risk
 
 # Folder structure

@@ -44,18 +44,16 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
          (url to kibana visualization:
        http://127.0.0.1:5601/app/dashboards#/view/7e80fe16-c10e-4032-ae73-2886a6d23cfa?_g=(filters:!(),refreshInterval:(pause:!t,value:60000),time:(from:now-15m,to:now))
 
-
-
-
      - **kafka** -Used for data traffic, sending by topic and distributing in an orderly and easy manament.
+       
   
-     -**mongo** -Used to store files
+     - **mongo** -Used to store files
        
      - **decryption** -Used for base 64 encoding
   
-     -**logger** -Used to track system logs
+     - **logger** -Used to track system logs
 
-     -**transcription** -Transcribes the audio files
+     - **transcription** -Transcribes the audio files
 
      
 

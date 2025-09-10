@@ -67,7 +67,10 @@ http://127.0.0.1:5601/app/dev_tools#/console
 
      - **transcription** -Transcribes the audio files
 
+
+
      
+<img width="860" height="537" alt="img" src="https://github.com/user-attachments/assets/37421db9-4077-4e38-9f37-a79f77a8a724" />
 
 
 

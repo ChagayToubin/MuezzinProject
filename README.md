@@ -81,16 +81,16 @@ http://127.0.0.1:5601/app/dev_tools#/console
   
 
 - ├───data_files
-    │   └───podcasts
+   - │   └───podcasts
   
 - ├───services
-    │   ├───end_point
-    │   │   
-    │   ├───read_meta_data
-    │   │   
-    │   ├───Receiving_processing_data
-    │   
-    │   ├───update_data
+   - │   ├───end_point
+    - │   │   
+    - │   ├───read_meta_data
+    - │   │   
+    - │   ├───Receiving_processing_data
+    - │   
+    - │   ├───update_data
 
 - ├───utilities
     │   ├───decryption

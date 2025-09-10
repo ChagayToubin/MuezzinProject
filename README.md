@@ -29,9 +29,12 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
       
    -  **update** -Calculates the amount of danger from the text and updates the appropriate fields 
                   Percentage of dangerous words , Determination of criminality ,And degree of risk
+                 explain( average percentage of words is 0.30939176841270893, so that would be the threshold for determining criminality or danger level.)
+      
+      -**end_point** -fast api server that shows me data by risk level
                       
 
-        **explain**(The average percentage of words is 0.30939176841270893, so that would be the threshold for determining criminality or danger level.)
+        
     
                  
                   
@@ -45,7 +48,16 @@ For a good and beautiful search in a visually pleasing way, you can use the cons
 
 
      - **kafka** -Used for data traffic, sending by topic and distributing in an orderly and easy manament.
-     - 
+  
+     -**mongo** -Used to store files
+       
+     - **decryption** -Used for base 64 encoding
+  
+     -**logger** -Used to track system logs
+
+     -**transcription** -Transcribes the audio files
+
+     
 
 
 

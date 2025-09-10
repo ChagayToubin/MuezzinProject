@@ -79,40 +79,27 @@ http://127.0.0.1:5601/app/dev_tools#/console
        
    ## Folder structure
   
-   ├───config
-│   
+
 ├───data_files
 │   └───podcasts
 ├───scripts
 ├───services
 │   ├───end_point
-│   │   └───__pycache__
+│   │   
 │   ├───read_meta_data
-│   │   └───__pycache__
+│   │   
 │   ├───Receiving_processing_data
-│   │   └───__pycache__
+│   
 │   ├───update_data
-│   │   └───__pycache__
-│   └───__pycache__
 ├───utilities
 │   ├───decryption
-│   │   └───__pycache__
 │   ├───elastic
-│   │   └───__pycache__
 │   ├───kafka
 │   │   ├───kafka_consumer
-│   │   │   └───__pycache__
 │   │   ├───kafka_producer
-│   │   │   └───__pycache__
-│   │   └───__pycache__
 │   ├───logger
-│   │   └───__pycache__
 │   ├───mongo
-│   │   └───__pycache__
 │   ├───transcription
-│   │   └───__pycache__
-│   └───__pycache__
-└───__pycache__
 
 
 

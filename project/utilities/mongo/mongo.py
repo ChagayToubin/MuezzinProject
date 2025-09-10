@@ -1,10 +1,9 @@
-import os
-from sys import path_hooks
+
 
 import gridfs
 from pymongo import MongoClient
-from datetime import datetime
-
+from project.utilities.logger.logger_info import Logger
+logger =Logger.get_logger()
 
 class Mongo:
     def __init__(self,mongo_setting):
@@ -26,10 +25,15 @@ class Mongo:
 
 
     def connect(self):
-        uri = self.get_uri()
-        self.client = MongoClient(uri)
-        self.db = self.client[self.db_name]
-        print(f"connected ")
+        try:
+            uri = self.get_uri()
+            self.client = MongoClient(uri)
+            self.db = self.client[self.db_name]
+            print(f"connected ")
+            logger.info("The connect seccess")
+        except Exception as e:
+            logger.error(f"the connect faild becuas{e}")
+
 
     def close(self):
 

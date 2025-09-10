@@ -1,7 +1,7 @@
 import json
 from project.utilities.transcription.transcriptions import Transcriptions
 
-
+import hashlib
 # Used for the processes running in the service
 
 class Process:
@@ -17,10 +17,16 @@ class Process:
         for i in kafka.consume():
             data_dict = json.loads(i.value)
 
+
+
             text = Transcriptions.voice_to_text(folder_path, data_dict["name"])
             data_dict["text"] = text
             print(data_dict)
             uniq_id = str(data_dict["size"]) + data_dict["name"]
-            es.send_data(data_dict, uniq_id)
+
+            encoded_id = uniq_id.encode('utf-8')
+
+
+            es.send_data(data_dict, encoded_id)
 
             mongo.send_audio(data_dict, uniq_id)

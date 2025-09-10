@@ -19,7 +19,7 @@ class Manager:
 
             self.topic = topic
 
-            logger.info("Reading the metadata and sending it to Kefka was successful.")
+            logger.info("The objects were successfully initialized..")
         except Exception as e:
             logger.error(f"Reading the metadata and sending it to Kefka was faild becuas{e}")
 
@@ -29,8 +29,8 @@ class Manager:
         try:
             self.process_meta_data.send_kafka(
                 self.path_folder, self.kafka, self.topic)
-
             logger.info("Reading the metadata and sending it to Kefka was successful.")
+
         except Exception as e:
             logger.error(f"Reading the metadata and sending it to Kefka failed because:{e}")
 

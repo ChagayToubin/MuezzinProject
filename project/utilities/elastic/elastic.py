@@ -1,8 +1,10 @@
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
-from elasticsearch import helpers
 from project.utilities.logger.logger_info import Logger
-logger=Logger.get_logger()
+
+logger = Logger.get_logger()
+
+
 class Elastic:
     def __init__(self, uri):
 
@@ -20,7 +22,11 @@ class Elastic:
             return "http://localhost:9200"
 
     def connection(self):
-        return Elasticsearch(self.uri)
+        try:
+            return Elasticsearch(self.uri)
+            logger.info("The connection to the Elastic server was successful.")
+        except Exception as e:
+            logger.error(f"The connection to the elastic server has crashed because{e}")
 
     def close(self):
         if self.es:
@@ -36,11 +42,27 @@ class Elastic:
         try:
             print(uniq_id)
             w = self.es.index(index=self.index, id=uniq_id, body=doc)
-            print(w)
+            logger.info("Sending data to Elastic was successful.")
         except Exception as e:
             logger.error(f"the send faild becuas{e}")
 
+    def find_risk(self, level_risk):
 
+        query = {
+            "query": {
+                "bool": {
+                    "must": [
+                        {"term": {"bds_threat_level": level_risk}}
+
+                    ]
+                }
+            }
+        }
+        response = self.es.search(index=self.index, body=query)
+        hits = response["hits"]["hits"]
+        if not hits:
+            return {"message": "No documents found."}
+        return hits
 
     def update_all_documents_sentiment(self):
         count_all = 0
@@ -133,22 +155,3 @@ class Elastic:
             }
         }
         return mapping
-
-
-    def find_risk(self,level_risk):
-
-        query = {
-            "query": {
-                "bool": {
-                    "must": [
-                        {"term": {"bds_threat_level": level_risk}}
-
-                    ]
-                }
-            }
-        }
-        response = self.es.search(index=self.index, body=query)
-        hits = response["hits"]["hits"]
-        if not hits:
-            return {"message": "לא נמצאו מסמכים מתאימים"}
-        return hits

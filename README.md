@@ -98,31 +98,6 @@ http://127.0.0.1:5601/app/dev_tools#/console
      - **transcription** -Transcribes the audio files
   
        
-   ## Folder structure
-  
-
-- ├───data_files
-   - │   └───podcasts
-  
-- ├───services
-   - │   ├───end_point
-    - │   │   
-    - │   ├───read_meta_data
-    - │   │   
-    - │   ├───Receiving_processing_data
-    - │   
-    - │   ├───update_data
-
-- ├───utilities
-   - │   ├───decryption
-   - │   ├───elastic
-   - │   ├───kafka
-   - │   │   ├───kafka_consumer
-   - │   │   ├───kafka_producer
-   - │   ├───logger
-   - │   ├───mongo
-   - │   ├───transcription
-
 
 
      

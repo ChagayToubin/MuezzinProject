@@ -1,4 +1,7 @@
 from kafka import KafkaConsumer
+from project.utilities.logger.logger_info import Logger
+
+logger=Logger.get_logger()
 
 class MyKafkaConsumer:
 
@@ -10,7 +13,6 @@ class MyKafkaConsumer:
 
     def open(self):
         try:
-
             self.consumer = KafkaConsumer(*self.topics, **self.configs)
         except Exception as e:
             print(type(e).__name__, "-", e)
